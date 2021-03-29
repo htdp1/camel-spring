@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rests xmlns="http://camel.apache.org/schema/spring"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+	
+	<!-- 
+	<rest path="/customers/">
+		<post uri="/persons">
+			<to uri="direct:postPersons" />
+		</post>
+		<get uri="/persons">
+			<to uri="direct:getPersons" />
+		</get>
+		<get uri="/persons/{personId}">
+			<to uri="direct:getPersionId" />
+		</get>
+		<put uri="/persons/{personId}">
+			<to uri="direct:putPersionId" />
+		</put>
+		<delete uri="/persons/{personId}">
+			<to uri="direct:deletePersionId" />
+		</delete>
+
+	</rest>
+
+	<rest path="/departments">
+		<get uri="">
+			<to
+				uri="http://localhost:8090/dept-spring/api/departments?bridgeEndpoint=true" />
+		</get>
+
+		<get uri="/{deptNo}">
+			<to
+				uri="http://localhost:8090/dept-spring/api?bridgeEndpoint=true" />
+		</get>
+	</rest>
+	-->
+
+</rests>

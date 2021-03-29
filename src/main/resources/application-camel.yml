@@ -1,0 +1,14 @@
+camel:
+  springboot:
+    main-run-controller: true
+#    xml-routes: false
+#    xml-rests: false
+#    xml-routes: classpath:/camel/*.xml
+#    xml-rests: classpath:/camel/*.xml
+#
+#  rest:
+#    context-path: /
+#  component:
+#    servlet:
+#      mapping:
+#        context-path: /redis-sidecar-spring/v1/*

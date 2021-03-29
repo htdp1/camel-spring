@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	      http://camel.apache.org/schema/spring
+	      http://camel.apache.org/schema/spring/camel-spring.xsd ">
+
+	<!-- <route id="file-in-out"> <from uri="file://filein?noop=true&amp;delete=true&amp;recursive=true" 
+		/> <to uri="log:File event: ${header.CamelFileEventType} occurred on file 
+		${header.CamelFileName} at ${header.CamelFileLastModified}" /> <to uri="file://fileout" 
+		/> </route> <route id="redis-file"> <from uri="spring-redis://127.0.0.1:7001?channels=departments&amp;command=SUBSCRIBE&amp;serializer=#redisSerializer" 
+		/> <to uri="file://filein" /> </route> -->
+		
+	<route id="getDepartments">
+		<from uri="rest:get:/departments" />
+		<to
+			uri="http://localhost:8090/dept-spring/api/departments?bridgeEndpoint=true" />
+	</route>
+	
+	<route id="getDepartment">
+		<from uri="rest:get:/departments/{deptNo}" />
+		<to uri="http://localhost:8090/dept-spring/api?bridgeEndpoint=true" />
+		<log message="${body}"></log>
+	</route>
+
+	<route>
+		<from uri="direct:DistributeOrderXML" />
+		<log message="Split by Distribute Order" />
+		<split>
+			<xpath>//order[@product = 'Oil']/items</xpath>
+			<to uri="file:src/main/resources/order/" />
+			<to uri="stream:out" />
+		</split>
+	</route>
+</routes>

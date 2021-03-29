@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /camel-spring
+    
+spring:
+  application:
+    name: camel-spring
+
+  config:
+    import: 
+    - application-camel.yml
+    - application-redis.yml
+    
+logging:
+  level:
+    root: info                                # all logging
+    '[com.htdp1.camelspirng]': debug   # Application logging
