@@ -15,4 +15,4 @@ spring:
 logging:
   level:
     root: info                                # all logging
-    '[com.htdp1.camelspirng]': debug   # Application logging
+    '[com.htdp1.camelspring]': debug   # Application logging

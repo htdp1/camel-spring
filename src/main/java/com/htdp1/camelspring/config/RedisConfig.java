@@ -18,7 +18,7 @@ import com.htdp1.camelspring.listener.RedisMessageSubscriber;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class RedisConfig {
 
 	public @Value("${spring.redis.host}") String host;
