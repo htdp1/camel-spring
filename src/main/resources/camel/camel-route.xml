@@ -11,7 +11,7 @@
 		/> </route> <route id="redis-file"> <from uri="spring-redis://127.0.0.1:7001?channels=departments&amp;command=SUBSCRIBE&amp;serializer=#redisSerializer" 
 		/> <to uri="file://filein" /> </route> -->
 		
-	<route id="getDepartments">
+	<!-- <route id="getDepartments">
 		<from uri="rest:get:/departments" />
 		<to
 			uri="http://localhost:8090/dept-spring/api/departments?bridgeEndpoint=true" />
@@ -31,5 +31,5 @@
 			<to uri="file:src/main/resources/order/" />
 			<to uri="stream:out" />
 		</split>
-	</route>
+	</route> -->
 </routes>
